@@ -1,0 +1,62 @@
+---
+provisioner:
+  name: ansible_playbook
+  roles_path: ./roles
+  modules_path: ./library
+  ansible_yum_repo: "https://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm"
+  ansible_verbose: true
+  ansible_verbosity: 3
+
+platforms:
+   - name: ubuntu-14.04
+     driver_plugin: vagrant
+     driver:
+       box: opscode-ubuntu-14.04
+       box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box
+       customize:
+         memory: 2048
+         cpus: 2
+       network:
+       - ["forwarded_port", {guest: 80, host: 8090}]
+       - ["private_network", {ip: "192.168.33.20"}]
+
+   - name: centos-7.1
+     driver_plugin: vagrant
+     driver:
+       box: centos-7.1
+       box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-7.1_chef-provisionerless.box
+       customize:
+         memory: 2048
+         cpus: 2
+       network:
+       - ["forwarded_port", {guest: 80, host: 8080}]
+       - ["private_network", {ip: "192.168.33.10"}] 
+
+   - name: centos-7.1-2
+     driver_plugin: vagrant
+     driver:
+       box: centos-7.1
+       box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-7.1_chef-provisionerless.box
+       customize:
+         memory: 1024
+         cpus: 1
+       network:
+       - ["private_network", {ip: "192.168.33.30"}]
+
+   - name: ubuntu-14.04-1
+     driver_plugin: vagrant
+     driver:
+       box: opscode-ubuntu-14.04
+       box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box
+       customize:
+         memory: 1024
+         cpus: 1
+       network:
+       - ["private_network", {ip: "192.168.33.40"}]
+
+suites:
+
+  - name: vagrant
+    provisioner:
+      playbook: vagrant.yml
+      hosts: vagrant 
