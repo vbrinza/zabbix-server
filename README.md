@@ -1,6 +1,17 @@
 # zabbix-server
 Zabbix Server Setup using Test Kitchen, Vagrant, Bash and Ansible
 
+Requirements:
+
+1. Virtualbox
+2. Vagrant
+3. Git
+
+Optional:
+
+1. Test Kitchen
+2. Ansible
+
 How to operate when using Test Kitchen:
 
 1. ansible-galaxy install -r requirements.yml
