@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision "ansible" do |ansible|
       ansible.playbook = "vagrant.yml"
       ansible.sudo = true
-      ansible.ask_vault_pass = true
+#      ansible.ask_vault_pass = true
     end
   end
 end
