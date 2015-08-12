@@ -12,3 +12,6 @@
 
 - src: https://github.com/vbrinza/ansible-role-zabbix-agent.git
   path: roles
+
+- src: https://github.com/vbrinza/ansible-role-common.git
+  path: roles

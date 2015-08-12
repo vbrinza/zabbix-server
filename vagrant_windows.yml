@@ -22,6 +22,7 @@
      server_url: "http://192.168.33.10/zabbix/api_jsonrpc.php"                                                                                                                               
      
    roles:
+     - ansible-role-common
      - ansible-role-apache
      - ansible-role-mysql
      - ansible-role-php
