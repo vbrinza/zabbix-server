@@ -1,6 +1,6 @@
 ---
  - name: Deploy Zabbix Server
-   hosts: vagrant
+   hosts: all
 #   sudo: yes
 
    vars:
