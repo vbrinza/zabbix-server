@@ -1,0 +1,30 @@
+---
+ - name: Deploy Zabbix Server
+   hosts: 127.0.0.1
+   connection: local
+
+   vars:
+   # MySQL                                                                                                                                                                                   
+     mysql_enablerepo: "http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm"                                                                                                   
+     mysql_reponame: "mysql-community,mysql-community-source"                                                                                                                                
+     mysql_packages:                                                                                                                                                                         
+       - mysql-community-server                                                                                                                                                              
+       - MySQL-python                                                                                                                                                                        
+                                                                                                                                                                                             
+   # Zabbix Server                                                                                                                                                                           
+     zbx_server_PostgreSQL: 0                                                                                                                                                                
+                                                                                                                                                                                             
+   # Zabbix Agent                                                                                                                                                                            
+     api_admin: "admin"                                                                                                                                                                      
+     api_password: "zabbix"                                                                                                                                                                  
+     zbx_server_Passive: "192.168.33.10"                       # Passive Server Checks                                                                                                       
+     zbx_agent_ServerActive: "192.168.33.10"                   # Active Server Checks                                                                                                        
+     server_url: "http://192.168.33.10/zabbix/api_jsonrpc.php"                                                                                                                               
+     
+   roles:
+     - ansible-role-apache
+     - ansible-role-mysql
+     - ansible-role-php
+     - ansible-role-zabbix-server
+#     - ansible-role-zabbix-agent
+
