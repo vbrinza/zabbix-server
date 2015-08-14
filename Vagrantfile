@@ -1,5 +1,6 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-7.1_chef-provisionerless.box"
+  config.vm.box = "chef/centos-7.0"   
+#  config.vm.box = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-7.1_chef-provisionerless.box"
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
     v.cpus = 2

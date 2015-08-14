@@ -19,7 +19,13 @@ How to operate when using Test Kitchen:
 3. kitchen create vagrant-centos-71
 4. kitchen converge vagrant-centos-71
 
-How to operate when using Vagrant:
+How to operate when using Vagrant on Linux/MacOS:
 
 1. ansible-galaxy install -r requirements.yml
-2. vagrant up 
+2. vagrant up
+
+How to operate when using Vagrant on Windows:
+
+1. cmd
+2. CALL windows.cmd
+3. vagrant up
