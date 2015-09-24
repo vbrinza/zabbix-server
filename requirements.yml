@@ -15,3 +15,9 @@
 
 - src: https://github.com/vbrinza/ansible-role-common.git
   path: roles
+
+- src: https://github.com/vbrinza/ansible-role-grafana.git
+  path: roles
+
+- src: https://github.com/vbrinza/ansible-role-zabbixweb.git
+  path: roles

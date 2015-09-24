@@ -20,11 +20,16 @@
      zbx_server_Passive: "192.168.33.10"                       # Passive Server Checks
      zbx_agent_ServerActive: "192.168.33.10"                   # Active Server Checks
      server_url: "http://192.168.33.10/zabbix/api_jsonrpc.php"
-     
+
+   # Grafana
+     zabbixDatasource: 1
+
    roles:
      - ansible-role-common
      - ansible-role-apache
      - ansible-role-mysql
      - ansible-role-php
      - ansible-role-zabbix-server
+     - ansible-role-grafana
+     - ansible-role-zabbixweb
 #     - ansible-role-zabbix-agent
